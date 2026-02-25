@@ -8,7 +8,8 @@ interface Certification {
   id: number
   title: string
   issuer: string
-  date: string
+  startDate: string
+  endDate: string
   image?: string
 }
 
@@ -18,20 +19,22 @@ export default function Certifications() {
       id: 1,
       title: 'Python for Data Science',
       issuer: 'Coursera',
-      date: '2024',
+      startDate: '2024-01',
+      endDate: '2024-03',
       image: undefined,
     },
     {
       id: 2,
       title: 'Machine Learning Basics',
       issuer: 'edX',
-      date: '2024',
+      startDate: '2024-02',
+      endDate: '2024-04',
       image: undefined,
     },
   ])
 
   const [showForm, setShowForm] = useState(false)
-  const [formData, setFormData] = useState({ title: '', issuer: '', date: '', image: '' })
+  const [formData, setFormData] = useState({ title: '', issuer: '', startDate: '', endDate: '', image: '' })
 
   const handleImageUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0]
@@ -45,13 +48,13 @@ export default function Certifications() {
   }
 
   const addCertification = () => {
-    if (formData.title && formData.issuer && formData.date) {
+    if (formData.title && formData.issuer && formData.startDate && formData.endDate) {
       const newCert: Certification = {
         id: Math.max(...certifications.map(c => c.id), 0) + 1,
         ...formData,
       }
       setCertifications([...certifications, newCert])
-      setFormData({ title: '', issuer: '', date: '', image: '' })
+      setFormData({ title: '', issuer: '', startDate: '', endDate: '', image: '' })
       setShowForm(false)
     }
   }
@@ -92,13 +95,27 @@ export default function Certifications() {
                 onChange={(e) => setFormData({ ...formData, issuer: e.target.value })}
                 className="w-full px-4 py-2 border border-border rounded-lg bg-input text-foreground placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-accent"
               />
-              <input
-                type="text"
-                placeholder="Year (e.g., 2024)"
-                value={formData.date}
-                onChange={(e) => setFormData({ ...formData, date: e.target.value })}
-                className="w-full px-4 py-2 border border-border rounded-lg bg-input text-foreground placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-accent"
-              />
+              
+              <div className="grid grid-cols-2 gap-4">
+                <div>
+                  <label className="block text-sm font-medium text-foreground mb-2">Start Date</label>
+                  <input
+                    type="month"
+                    value={formData.startDate}
+                    onChange={(e) => setFormData({ ...formData, startDate: e.target.value })}
+                    className="w-full px-4 py-2 border border-border rounded-lg bg-input text-foreground focus:outline-none focus:ring-2 focus:ring-accent"
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-foreground mb-2">End Date</label>
+                  <input
+                    type="month"
+                    value={formData.endDate}
+                    onChange={(e) => setFormData({ ...formData, endDate: e.target.value })}
+                    className="w-full px-4 py-2 border border-border rounded-lg bg-input text-foreground focus:outline-none focus:ring-2 focus:ring-accent"
+                  />
+                </div>
+              </div>
               
               <div className="border-2 border-dashed border-border rounded-lg p-4">
                 <label className="flex flex-col items-center justify-center cursor-pointer">
@@ -146,7 +163,7 @@ export default function Certifications() {
                 <button
                   onClick={() => {
                     setShowForm(false)
-                    setFormData({ title: '', issuer: '', date: '', image: '' })
+                    setFormData({ title: '', issuer: '', startDate: '', endDate: '', image: '' })
                   }}
                   className="px-4 py-2 border border-border text-foreground rounded-lg font-medium hover:bg-secondary transition-colors"
                 >
@@ -184,8 +201,12 @@ export default function Certifications() {
               
               <div className="p-6">
                 <h3 className="text-lg font-bold text-primary mb-2">{cert.title}</h3>
-                <p className="text-accent font-medium mb-2">{cert.issuer}</p>
-                <p className="text-muted-foreground text-sm">{cert.date}</p>
+                <p className="text-accent font-medium mb-3">{cert.issuer}</p>
+                <div className="flex items-center justify-between text-sm text-muted-foreground">
+                  <span>{new Date(cert.startDate + '-01').toLocaleDateString('en-US', { year: 'numeric', month: 'short' })}</span>
+                  <span className="text-xs">•</span>
+                  <span>{new Date(cert.endDate + '-01').toLocaleDateString('en-US', { year: 'numeric', month: 'short' })}</span>
+                </div>
               </div>
             </div>
           ))}
