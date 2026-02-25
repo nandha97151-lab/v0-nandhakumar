@@ -2,11 +2,13 @@
 
 import { ArrowRight } from 'lucide-react'
 import Link from 'next/link'
+import ProfilePicture from './profile-picture'
 
 export default function Hero() {
   return (
     <section className="py-20 md:py-32 px-4 sm:px-6 lg:px-8">
       <div className="max-w-4xl mx-auto">
+        <ProfilePicture />
         <div className="space-y-6">
           <div className="inline-block">
             <span className="px-3 py-1 bg-accent/10 text-accent rounded-full text-sm font-medium">
