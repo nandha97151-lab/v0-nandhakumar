@@ -1,41 +1,91 @@
 'use client'
 
+import { Code2, Cpu, Database, Zap } from 'lucide-react'
+
 export default function About() {
+  const skills = [
+    { name: 'Python', icon: Code2 },
+    { name: 'Machine Learning', icon: Cpu },
+    { name: 'Data Analysis', icon: Database },
+    { name: 'Statistics', icon: Zap },
+  ]
+
   return (
-    <section id="about" className="py-20 px-4 sm:px-6 lg:px-8 bg-secondary">
-      <div className="max-w-4xl mx-auto">
-        <h2 className="text-3xl md:text-4xl font-bold text-primary mb-8">About Me</h2>
-
-        <div className="grid md:grid-cols-2 gap-12">
-          <div className="space-y-4">
-            <p className="text-lg text-foreground leading-relaxed">
-              I&apos;m a first-year student at KPRIET (Karaikudi Pandian Ramasamy Institute of Engineering and Technology) pursuing a degree in Artificial Intelligence and Data Science. I&apos;m passionate about exploring the intersection of AI, machine learning, and data analytics.
-            </p>
-            <p className="text-lg text-foreground leading-relaxed">
-              My journey in tech began with a curiosity about how data shapes decision-making. I&apos;m enthusiastic about learning cutting-edge technologies, solving real-world problems with AI, and collaborating on innovative projects that make a difference.
-            </p>
-          </div>
-
-          <div className="space-y-6">
+    <section id="about" className="relative py-24 px-4 sm:px-6 lg:px-8 overflow-hidden">
+      <div className="max-w-6xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-12 items-center">
+          {/* Left Content */}
+          <div className="space-y-8">
             <div>
-              <h3 className="text-lg font-semibold text-primary mb-3">Skills</h3>
-              <div className="flex flex-wrap gap-2">
-                {['Python', 'Machine Learning', 'Data Analysis', 'SQL', 'Pandas', 'NumPy', 'Scikit-learn', 'Statistics'].map((skill) => (
-                  <span
-                    key={skill}
-                    className="px-3 py-1 bg-accent/10 text-accent rounded-full text-sm font-medium"
-                  >
-                    {skill}
-                  </span>
-                ))}
-              </div>
+              <span className="text-accent font-semibold text-sm uppercase tracking-wider">About Me</span>
+              <h2 className="text-5xl md:text-6xl font-bold text-foreground mt-4">
+                Passionate about
+                <span className="gradient-text block">AI & Innovation</span>
+              </h2>
+            </div>
+
+            <div className="space-y-4 text-muted-foreground leading-relaxed">
+              <p>
+                I'm a first-year student at KPRIET (Karaikudi Pandian Ramasamy Institute of Engineering and Technology) pursuing a degree in Artificial Intelligence and Data Science. My journey into tech began with a curiosity about how data shapes our world and decisions.
+              </p>
+              <p>
+                I'm passionate about exploring machine learning, data analytics, and building intelligent solutions. Every day is an opportunity to learn something new and push the boundaries of what's possible with AI.
+              </p>
             </div>
 
             <div>
-              <h3 className="text-lg font-semibold text-primary mb-3">Education</h3>
-              <div className="border-l-2 border-accent pl-4 py-2">
-                <p className="font-semibold text-foreground">B.Tech in Artificial Intelligence & Data Science</p>
-                <p className="text-muted-foreground">KPRIET, Karaikudi • 2024-2028</p>
+              <h3 className="text-lg font-semibold text-foreground mb-4">Core Skills</h3>
+              <div className="grid grid-cols-2 gap-3">
+                {skills.map((skill) => {
+                  const Icon = skill.icon
+                  return (
+                    <div key={skill.name} className="glass-effect p-4 rounded-lg flex items-center gap-3 group hover:bg-white/20 transition-all">
+                      <Icon className="w-5 h-5 text-accent group-hover:scale-110 transition-transform" />
+                      <span className="text-foreground font-medium">{skill.name}</span>
+                    </div>
+                  )
+                })}
+              </div>
+            </div>
+          </div>
+
+          {/* Right Content - Stats & Education */}
+          <div className="space-y-6">
+            <div className="glass-effect p-8 rounded-xl space-y-6">
+              <div className="border-b border-white/10 pb-6">
+                <h3 className="text-sm uppercase tracking-wider text-accent font-semibold mb-3">Education</h3>
+                <div className="space-y-2">
+                  <p className="text-lg font-semibold text-foreground">B.Tech AI & Data Science</p>
+                  <p className="text-muted-foreground">KPRIET, Karaikudi</p>
+                  <p className="text-sm text-accent">2024 - 2028</p>
+                </div>
+              </div>
+
+              <div className="border-b border-white/10 pb-6">
+                <h3 className="text-sm uppercase tracking-wider text-accent font-semibold mb-3">Focus Areas</h3>
+                <ul className="space-y-2 text-foreground">
+                  <li className="flex items-center gap-2">
+                    <span className="w-2 h-2 bg-accent rounded-full"></span>
+                    Machine Learning
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <span className="w-2 h-2 bg-accent rounded-full"></span>
+                    Deep Learning
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <span className="w-2 h-2 bg-accent rounded-full"></span>
+                    Data Visualization
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <span className="w-2 h-2 bg-accent rounded-full"></span>
+                    NLP & Computer Vision
+                  </li>
+                </ul>
+              </div>
+
+              <div>
+                <h3 className="text-sm uppercase tracking-wider text-accent font-semibold mb-3">Location</h3>
+                <p className="text-foreground">Karaikudi, Tamil Nadu</p>
               </div>
             </div>
           </div>

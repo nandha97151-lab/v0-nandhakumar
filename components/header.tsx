@@ -22,10 +22,10 @@ export default function Header() {
   }
 
   return (
-    <header className="sticky top-0 z-50 bg-background/95 backdrop-blur border-b border-border">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
-        <Link href="/" className="text-2xl font-bold text-primary hover:opacity-80 transition-opacity">
-          NANDHAKUMAR N
+    <header className="sticky top-0 z-50 glass-effect backdrop-blur-xl border-b border-white/10">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
+        <Link href="/" className="text-2xl font-bold gradient-text hover:opacity-80 transition-opacity">
+          NK
         </Link>
 
         {/* Mobile Menu Button */}
@@ -43,22 +43,23 @@ export default function Header() {
             <button
               key={item.id}
               onClick={() => scrollToSection(item.id)}
-              className="text-sm font-medium text-foreground hover:text-accent transition-colors"
+              className="text-sm font-medium text-foreground hover:text-accent transition-all duration-300 relative group"
             >
               {item.label}
+              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-accent group-hover:w-full transition-all duration-300"></span>
             </button>
           ))}
         </nav>
 
         {/* Mobile Navigation */}
         {isOpen && (
-          <div className="absolute top-full left-0 right-0 bg-background border-b border-border md:hidden">
+          <div className="absolute top-full left-0 right-0 glass-effect border-b border-white/10 md:hidden">
             <nav className="flex flex-col p-4 gap-2">
               {navItems.map((item) => (
                 <button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
-                  className="text-sm font-medium text-foreground hover:text-accent py-2 px-2 hover:bg-secondary rounded transition-colors text-left"
+                  className="text-sm font-medium text-foreground hover:text-accent py-2 px-2 hover:bg-white/10 rounded transition-colors text-left"
                 >
                   {item.label}
                 </button>

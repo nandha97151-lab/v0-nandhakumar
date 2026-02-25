@@ -27,7 +27,7 @@ export default function Projects() {
     },
     {
       title: 'Portfolio Website',
-      description: 'Built this professional portfolio website to showcase skills, projects, and experience. Demonstrates front-end development capabilities and design aesthetic.',
+      description: 'Built this professional portfolio website to showcase skills, projects, and experience. Demonstrates front-end development capabilities and modern design aesthetic.',
       tags: ['Next.js', 'React', 'Tailwind CSS', 'TypeScript'],
       link: '#',
       github: '#',
@@ -35,45 +35,61 @@ export default function Projects() {
   ]
 
   return (
-    <section id="projects" className="py-20 px-4 sm:px-6 lg:px-8 bg-secondary">
-      <div className="max-w-4xl mx-auto">
-        <h2 className="text-3xl md:text-4xl font-bold text-primary mb-12">Featured Projects</h2>
+    <section id="projects" className="relative py-24 px-4 sm:px-6 lg:px-8 overflow-hidden">
+      <div className="max-w-6xl mx-auto">
+        <div className="mb-16">
+          <span className="text-accent font-semibold text-sm uppercase tracking-wider">Portfolio</span>
+          <h2 className="text-5xl md:text-6xl font-bold text-foreground mt-4">
+            Featured
+            <span className="gradient-text block">Projects</span>
+          </h2>
+        </div>
 
         <div className="grid md:grid-cols-2 gap-6">
           {projects.map((project, index) => (
             <div
               key={index}
-              className="border border-border bg-background rounded-lg p-6 hover:shadow-lg transition-shadow"
+              className="group relative glass-effect rounded-xl overflow-hidden hover:bg-white/20 transition-all duration-300"
             >
-              <h3 className="text-xl font-bold text-primary mb-2">{project.title}</h3>
-              <p className="text-foreground mb-4 leading-relaxed text-sm">{project.description}</p>
+              {/* Accent bar */}
+              <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-accent to-purple-500 group-hover:h-1.5 transition-all"></div>
 
-              <div className="flex flex-wrap gap-2 mb-4">
-                {project.tags.map((tag) => (
-                  <span
-                    key={tag}
-                    className="px-2 py-1 bg-accent/10 text-accent rounded text-xs font-medium"
+              <div className="p-8 space-y-6">
+                {/* Header */}
+                <div className="space-y-2">
+                  <h3 className="text-2xl font-bold text-foreground">{project.title}</h3>
+                  <p className="text-muted-foreground leading-relaxed">{project.description}</p>
+                </div>
+
+                {/* Tags */}
+                <div className="flex flex-wrap gap-2">
+                  {project.tags.map((tag) => (
+                    <span
+                      key={tag}
+                      className="px-3 py-1 bg-white/5 text-accent text-sm font-medium rounded-full"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+
+                {/* Links */}
+                <div className="flex gap-3 pt-4 border-t border-white/10">
+                  <a
+                    href={project.link}
+                    className="flex items-center gap-2 text-accent hover:text-pink-400 transition-colors font-medium group/link"
                   >
-                    {tag}
-                  </span>
-                ))}
-              </div>
-
-              <div className="flex gap-3">
-                <a
-                  href={project.link}
-                  className="flex items-center gap-2 text-accent hover:text-accent/80 transition-colors text-sm font-medium"
-                >
-                  Live Demo
-                  <ExternalLink className="w-4 h-4" />
-                </a>
-                <a
-                  href={project.github}
-                  className="flex items-center gap-2 text-accent hover:text-accent/80 transition-colors text-sm font-medium"
-                >
-                  Code
-                  <Github className="w-4 h-4" />
-                </a>
+                    View Project
+                    <ExternalLink className="w-4 h-4 group-hover/link:translate-x-1 transition-transform" />
+                  </a>
+                  <a
+                    href={project.github}
+                    className="flex items-center gap-2 text-accent hover:text-pink-400 transition-colors font-medium group/link"
+                  >
+                    GitHub
+                    <Github className="w-4 h-4 group-hover/link:scale-110 transition-transform" />
+                  </a>
+                </div>
               </div>
             </div>
           ))}
