@@ -9,10 +9,10 @@ export default function About() {
         <div className="grid md:grid-cols-2 gap-12">
           <div className="space-y-4">
             <p className="text-lg text-foreground leading-relaxed">
-              I&apos;m a passionate full-stack developer with 5+ years of experience building web applications. I love creating intuitive user interfaces and robust backend systems that work seamlessly together.
+              I&apos;m a first-year student at KPRIET (Karaikudi Pandian Ramasamy Institute of Engineering and Technology) pursuing a degree in Artificial Intelligence and Data Science. I&apos;m passionate about exploring the intersection of AI, machine learning, and data analytics.
             </p>
             <p className="text-lg text-foreground leading-relaxed">
-              My journey started with a curiosity about how websites work, and it evolved into a career dedicated to solving complex problems with elegant code. I believe in continuous learning and staying updated with the latest technologies.
+              My journey in tech began with a curiosity about how data shapes decision-making. I&apos;m enthusiastic about learning cutting-edge technologies, solving real-world problems with AI, and collaborating on innovative projects that make a difference.
             </p>
           </div>
 
@@ -20,7 +20,7 @@ export default function About() {
             <div>
               <h3 className="text-lg font-semibold text-primary mb-3">Skills</h3>
               <div className="flex flex-wrap gap-2">
-                {['React', 'Next.js', 'TypeScript', 'Tailwind CSS', 'Node.js', 'PostgreSQL', 'GraphQL', 'AWS'].map((skill) => (
+                {['Python', 'Machine Learning', 'Data Analysis', 'SQL', 'Pandas', 'NumPy', 'Scikit-learn', 'Statistics'].map((skill) => (
                   <span
                     key={skill}
                     className="px-3 py-1 bg-accent/10 text-accent rounded-full text-sm font-medium"
@@ -34,8 +34,8 @@ export default function About() {
             <div>
               <h3 className="text-lg font-semibold text-primary mb-3">Education</h3>
               <div className="border-l-2 border-accent pl-4 py-2">
-                <p className="font-semibold text-foreground">Bachelor of Science in Computer Science</p>
-                <p className="text-muted-foreground">State University • 2019</p>
+                <p className="font-semibold text-foreground">B.Tech in Artificial Intelligence & Data Science</p>
+                <p className="text-muted-foreground">KPRIET, Karaikudi • 2024-2028</p>
               </div>
             </div>
           </div>

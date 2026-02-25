@@ -24,7 +24,7 @@ export default function Header() {
     <header className="sticky top-0 z-50 bg-background/95 backdrop-blur border-b border-border">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
         <Link href="/" className="text-2xl font-bold text-primary hover:opacity-80 transition-opacity">
-          Alex Chen
+          NANDHAKUMAR N
         </Link>
 
         {/* Mobile Menu Button */}

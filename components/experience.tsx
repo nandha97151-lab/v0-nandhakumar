@@ -3,25 +3,25 @@
 export default function Experience() {
   const experiences = [
     {
-      title: 'Senior Frontend Developer',
-      company: 'Tech Innovations Inc.',
-      period: '2023 - Present',
-      description: 'Leading frontend development for enterprise applications. Building scalable React components and optimizing application performance.',
-      highlights: ['React & Next.js', 'Team Leadership', 'UI/UX Optimization'],
+      title: 'Student - AI & Data Science',
+      company: 'KPRIET, Karaikudi',
+      period: '2024 - Present',
+      description: 'Currently pursuing B.Tech in Artificial Intelligence & Data Science. Building strong foundation in machine learning, statistics, and data analysis. Actively learning cutting-edge AI technologies.',
+      highlights: ['Machine Learning', 'Data Analysis', 'Python', 'Statistics'],
     },
     {
-      title: 'Full Stack Developer',
-      company: 'Digital Solutions Ltd.',
-      period: '2021 - 2023',
-      description: 'Developed and maintained full-stack web applications using React and Node.js. Collaborated with cross-functional teams to deliver features.',
-      highlights: ['React', 'Node.js', 'PostgreSQL', 'AWS'],
+      title: 'Relevant Coursework',
+      company: 'KPRIET',
+      period: 'Ongoing',
+      description: 'Engaging with foundational courses in AI, mathematics for data science, databases, and programming. Participating in practical labs and hands-on projects to apply theoretical concepts.',
+      highlights: ['Algorithms', 'Database Management', 'Mathematics', 'Programming'],
     },
     {
-      title: 'Junior Developer',
-      company: 'Startup Hub',
-      period: '2019 - 2021',
-      description: 'Contributed to building customer-facing web applications. Learned modern web development practices and best practices.',
-      highlights: ['JavaScript', 'React', 'CSS', 'Git'],
+      title: 'Self-Learning & Projects',
+      company: 'Personal Development',
+      period: '2024 - Present',
+      description: 'Actively learning through online courses, tutorials, and building personal projects. Exploring areas like neural networks, data visualization, and AI applications.',
+      highlights: ['Online Learning', 'Project Building', 'AI Exploration', 'Community'],
     },
   ]
 
