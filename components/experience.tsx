@@ -6,8 +6,8 @@ export default function Experience() {
   const experiences = [
     {
       title: 'Student - AI & Data Science',
-      company: 'KPRIET, Karaikudi',
-      period: '2024 - Present',
+      company: 'KPRIET, Aviashi-Coimbatore Road, Arasur, Uthupalayam',
+      period: '2025 - Present',
       description: 'Currently pursuing B.Tech in Artificial Intelligence & Data Science. Building strong foundation in machine learning, statistics, and data analysis.',
       highlights: ['Machine Learning', 'Data Analysis', 'Python', 'Statistics'],
     },
@@ -21,7 +21,7 @@ export default function Experience() {
     {
       title: 'Self-Learning & Projects',
       company: 'Personal Development',
-      period: '2024 - Present',
+      period: '2025 - Present',
       description: 'Actively learning through online courses, tutorials, and building personal projects. Exploring areas like neural networks and AI applications.',
       highlights: ['Online Learning', 'Project Building', 'AI Exploration', 'Community'],
     },

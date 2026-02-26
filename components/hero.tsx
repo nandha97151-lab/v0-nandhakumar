@@ -1,8 +1,5 @@
-'use client'
-
 import { ArrowRight, Sparkles } from 'lucide-react'
 import Link from 'next/link'
-import ProfilePicture from './profile-picture'
 
 export default function Hero() {
   return (
@@ -17,9 +14,11 @@ export default function Hero() {
       {/* Main content */}
       <div className="relative z-10 max-w-4xl mx-auto w-full">
         <div className="text-center space-y-8">
-          {/* Profile Picture */}
+          {/* Profile Picture Placeholder */}
           <div className="flex justify-center">
-            <ProfilePicture />
+            <div className="w-32 h-32 rounded-full bg-gradient-to-br from-accent to-purple-500 flex items-center justify-center text-white text-4xl font-bold shadow-lg shadow-accent/50">
+              NK
+            </div>
           </div>
 
           {/* Badge */}

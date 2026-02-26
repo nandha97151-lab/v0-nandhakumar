@@ -56,8 +56,8 @@ export default function About() {
                 <h3 className="text-sm uppercase tracking-wider text-accent font-semibold mb-3">Education</h3>
                 <div className="space-y-2">
                   <p className="text-lg font-semibold text-foreground">B.Tech AI & Data Science</p>
-                  <p className="text-muted-foreground">KPRIET, Karaikudi</p>
-                  <p className="text-sm text-accent">2024 - 2028</p>
+                  <p className="text-muted-foreground">KPRIET, Coimbatore</p>
+                  <p className="text-sm text-accent">2025 - 2029</p>
                 </div>
               </div>
 
@@ -85,7 +85,7 @@ export default function About() {
 
               <div>
                 <h3 className="text-sm uppercase tracking-wider text-accent font-semibold mb-3">Location</h3>
-                <p className="text-foreground">Karaikudi, Tamil Nadu</p>
+                <p className="text-foreground">Aviashi-Coimbatore Road, Arasur, Uthupalayam</p>
               </div>
             </div>
           </div>
