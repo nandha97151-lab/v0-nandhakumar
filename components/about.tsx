@@ -57,7 +57,7 @@ export default function About() {
                 <div className="space-y-2">
                   <p className="text-lg font-semibold text-foreground">B.Tech AI & Data Science</p>
                   <p className="text-muted-foreground">KPRIET, Karaikudi</p>
-                  <p className="text-sm text-accent">2024 - 2028</p>
+                  <p className="text-sm text-accent">2025 - 2029</p>
                 </div>
               </div>
 
