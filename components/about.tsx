@@ -11,11 +11,11 @@ export default function About() {
   ]
 
   return (
-    <section id="about" className="relative py-24 px-4 sm:px-6 lg:px-8 overflow-hidden">
+    <section id="about" className="relative snap-section py-24 px-4 sm:px-6 lg:px-8 overflow-hidden">
       <div className="max-w-6xl mx-auto">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
-          <div className="space-y-8">
+          <div className="space-y-8 animate-slide-in-left">
             <div>
               <span className="text-accent font-semibold text-sm uppercase tracking-wider">About Me</span>
               <h2 className="text-5xl md:text-6xl font-bold text-foreground mt-4">
@@ -50,7 +50,7 @@ export default function About() {
           </div>
 
           {/* Right Content - Stats & Education */}
-          <div className="space-y-6">
+          <div className="space-y-6 animate-slide-in-right">
             <div className="glass-effect p-8 rounded-xl space-y-6">
               <div className="border-b border-white/10 pb-6">
                 <h3 className="text-sm uppercase tracking-wider text-accent font-semibold mb-3">Education</h3>

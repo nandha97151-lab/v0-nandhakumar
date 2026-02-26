@@ -6,7 +6,7 @@ import ProfilePicture from './profile-picture'
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden px-4 sm:px-6 lg:px-8">
+    <section className="relative snap-section flex items-center justify-center overflow-hidden px-4 sm:px-6 lg:px-8">
       {/* Animated gradient orbs background */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute -top-40 -right-40 w-80 h-80 bg-accent rounded-full mix-blend-screen opacity-20 animate-pulse"></div>
@@ -43,15 +43,15 @@ export default function Hero() {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center pt-8">
-            <button
-              onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
+            <Link
+              href="#projects"
               className="group relative px-8 py-3 bg-gradient-to-r from-accent to-purple-500 text-accent-foreground rounded-full font-semibold hover:shadow-lg hover:shadow-accent/40 transition-all duration-300 flex items-center justify-center gap-2 overflow-hidden"
             >
               <span className="relative z-10 flex items-center gap-2">
                 Explore My Work
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </span>
-            </button>
+            </Link>
             <a
               href="mailto:nandha97151@gmail.com"
               className="px-8 py-3 glass-effect rounded-full font-semibold text-foreground hover:bg-white/20 transition-all duration-300 flex items-center justify-center gap-2"

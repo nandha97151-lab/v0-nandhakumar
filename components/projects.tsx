@@ -35,9 +35,9 @@ export default function Projects() {
   ]
 
   return (
-    <section id="projects" className="relative py-24 px-4 sm:px-6 lg:px-8 overflow-hidden">
+    <section id="projects" className="relative snap-section py-24 px-4 sm:px-6 lg:px-8 overflow-hidden">
       <div className="max-w-6xl mx-auto">
-        <div className="mb-16">
+        <div className="mb-16 animate-fade-in-up">
           <span className="text-accent font-semibold text-sm uppercase tracking-wider">Portfolio</span>
           <h2 className="text-5xl md:text-6xl font-bold text-foreground mt-4">
             Featured

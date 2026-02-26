@@ -28,9 +28,9 @@ export default function Experience() {
   ]
 
   return (
-    <section id="experience" className="relative py-24 px-4 sm:px-6 lg:px-8">
+    <section id="experience" className="relative snap-section py-24 px-4 sm:px-6 lg:px-8">
       <div className="max-w-6xl mx-auto">
-        <div className="mb-16">
+        <div className="mb-16 animate-fade-in-up">
           <span className="text-accent font-semibold text-sm uppercase tracking-wider">Experience</span>
           <h2 className="text-5xl md:text-6xl font-bold text-foreground mt-4">
             My Journey

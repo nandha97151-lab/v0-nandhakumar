@@ -4,7 +4,7 @@ import { Mail, Linkedin, Github, ArrowRight } from 'lucide-react'
 
 export default function Contact() {
   return (
-    <section id="contact" className="relative py-24 px-4 sm:px-6 lg:px-8 overflow-hidden">
+    <section id="contact" className="relative snap-section py-24 px-4 sm:px-6 lg:px-8 overflow-hidden">
       {/* Background elements */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         <div className="absolute -bottom-40 -right-40 w-80 h-80 bg-accent rounded-full mix-blend-screen opacity-10 animate-pulse"></div>
@@ -14,7 +14,7 @@ export default function Contact() {
       <div className="relative z-10 max-w-6xl mx-auto">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
-          <div className="space-y-8">
+          <div className="space-y-8 animate-slide-in-left">
             <div>
               <span className="text-accent font-semibold text-sm uppercase tracking-wider">Get In Touch</span>
               <h2 className="text-5xl md:text-6xl font-bold text-foreground mt-4">
