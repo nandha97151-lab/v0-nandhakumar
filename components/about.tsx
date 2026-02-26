@@ -56,7 +56,7 @@ export default function About() {
                 <h3 className="text-sm uppercase tracking-wider text-accent font-semibold mb-3">Education</h3>
                 <div className="space-y-2">
                   <p className="text-lg font-semibold text-foreground">B.Tech AI & Data Science</p>
-                  <p className="text-muted-foreground">KPRIET, Karaikudi</p>
+                  <p className="text-muted-foreground">KPRIET, Coimbatore</p>
                   <p className="text-sm text-accent">2025 - 2029</p>
                 </div>
               </div>
