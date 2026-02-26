@@ -6,7 +6,7 @@ export default function Experience() {
   const experiences = [
     {
       title: 'Student - AI & Data Science',
-      company: 'KPRIET, Karaikudi',
+      company: 'KPRIET, Aviashi-Coimbatore Road, Arasur, Uthupalayam',
       period: '2024 - Present',
       description: 'Currently pursuing B.Tech in Artificial Intelligence & Data Science. Building strong foundation in machine learning, statistics, and data analysis.',
       highlights: ['Machine Learning', 'Data Analysis', 'Python', 'Statistics'],

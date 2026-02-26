@@ -85,7 +85,7 @@ export default function About() {
 
               <div>
                 <h3 className="text-sm uppercase tracking-wider text-accent font-semibold mb-3">Location</h3>
-                <p className="text-foreground">Karaikudi, Tamil Nadu</p>
+                <p className="text-foreground">Aviashi-Coimbatore Road, Arasur, Uthupalayam</p>
               </div>
             </div>
           </div>
