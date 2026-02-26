@@ -26,7 +26,7 @@ export default function About() {
 
             <div className="space-y-4 text-muted-foreground leading-relaxed">
               <p>
-                I'm a first-year student at KPRIET (Karaikudi Pandian Ramasamy Institute of Engineering and Technology) pursuing a degree in Artificial Intelligence and Data Science. My journey into tech began with a curiosity about how data shapes our world and decisions.
+                I'm a first-year student at KPRIET pursuing a degree in Artificial Intelligence and Data Science. My journey into tech began with a curiosity about how data shapes our world and decisions.
               </p>
               <p>
                 I'm passionate about exploring machine learning, data analytics, and building intelligent solutions. Every day is an opportunity to learn something new and push the boundaries of what's possible with AI.
