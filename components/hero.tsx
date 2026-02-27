@@ -1,7 +1,28 @@
-import { ArrowRight, Sparkles } from 'lucide-react'
+'use client'
+
+import { ArrowRight, Sparkles, Plus, X } from 'lucide-react'
 import Link from 'next/link'
+import Image from 'next/image'
+import { useState } from 'react'
 
 export default function Hero() {
+  const [profileImage, setProfileImage] = useState<string | null>(null)
+
+  const handleImageUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0]
+    if (file) {
+      const reader = new FileReader()
+      reader.onloadend = () => {
+        setProfileImage(reader.result as string)
+      }
+      reader.readAsDataURL(file)
+    }
+  }
+
+  const removeImage = () => {
+    setProfileImage(null)
+  }
+
   return (
     <section className="relative snap-section flex items-center justify-center overflow-hidden px-4 sm:px-6 lg:px-8">
       {/* Animated gradient orbs background */}
@@ -14,10 +35,79 @@ export default function Hero() {
       {/* Main content */}
       <div className="relative z-10 max-w-4xl mx-auto w-full">
         <div className="text-center space-y-8">
-          {/* Profile Picture Placeholder */}
-          <div className="flex justify-center">
-            <div className="w-32 h-32 rounded-full bg-gradient-to-br from-accent to-purple-500 flex items-center justify-center text-white text-4xl font-bold shadow-lg shadow-accent/50">
-              NK
+          {/* Book-Style Profile Picture with Upload */}
+          <div className="flex justify-center pt-8">
+            <div className="relative group perspective">
+              {profileImage ? (
+                <>
+                  {/* Book-style frame with image */}
+                  <div className="relative w-48 h-64 rounded-lg overflow-hidden shadow-2xl shadow-accent/30 border-8 border-amber-900/50 bg-amber-900">
+                    {/* Book spine effect */}
+                    <div className="absolute -left-2 top-0 bottom-0 w-2 bg-gradient-to-r from-black/30 to-transparent"></div>
+                    
+                    <Image
+                      src={profileImage}
+                      alt="Profile"
+                      fill
+                      className="w-full h-full object-cover"
+                    />
+                    
+                    {/* Glossy overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-black/20 pointer-events-none"></div>
+                  </div>
+                  
+                  {/* Remove button */}
+                  <button
+                    onClick={removeImage}
+                    className="absolute -top-3 -right-3 p-2.5 bg-destructive text-destructive-foreground rounded-full hover:opacity-90 transition-opacity shadow-lg z-10 border-2 border-background"
+                    title="Remove photo"
+                  >
+                    <X className="w-5 h-5" />
+                  </button>
+                  
+                  {/* Change photo button */}
+                  <label className="absolute -bottom-3 -right-3 p-2.5 bg-accent text-accent-foreground rounded-full hover:bg-purple-500 transition-all cursor-pointer shadow-lg border-2 border-background">
+                    <Plus className="w-5 h-5" />
+                    <input
+                      type="file"
+                      accept="image/*"
+                      onChange={handleImageUpload}
+                      className="hidden"
+                    />
+                  </label>
+                </>
+              ) : (
+                <label className="relative w-48 h-64 rounded-lg overflow-hidden cursor-pointer transition-all group/upload border-8 border-amber-900/50 bg-gradient-to-br from-amber-950 via-slate-900 to-purple-950 shadow-2xl shadow-accent/40 hover:shadow-accent/60">
+                  {/* Book texture background */}
+                  <div className="absolute inset-0 bg-[url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%22100%22><filter id=%22noise%22><feTurbulence type=%22fractalNoise%22 baseFrequency=%220.8%22 numOctaves=%224%22 /></filter><rect width=%22100%22 height=%22100%22 fill=%22%23ffffff%22 opacity=%220.03%22 filter=%22url(%23noise)%22/></svg>')] opacity-50"></div>
+                  
+                  {/* Book spine effect */}
+                  <div className="absolute -left-2 top-0 bottom-0 w-2 bg-gradient-to-r from-black/50 to-transparent"></div>
+                  
+                  {/* Content */}
+                  <div className="relative z-10 w-full h-full flex flex-col items-center justify-center gap-4">
+                    <div className="text-center space-y-3">
+                      <div className="text-6xl">
+                        <Plus className="w-16 h-16 text-accent mx-auto group-hover/upload:scale-110 transition-transform duration-300" />
+                      </div>
+                      <div className="space-y-1">
+                        <p className="text-sm font-bold text-foreground">ADD YOUR PHOTO</p>
+                        <p className="text-xs text-muted-foreground">Click to upload</p>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  {/* Glossy overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-black/30 pointer-events-none"></div>
+                  
+                  <input
+                    type="file"
+                    accept="image/*"
+                    onChange={handleImageUpload}
+                    className="hidden"
+                  />
+                </label>
+              )}
             </div>
           </div>
 
