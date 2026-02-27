@@ -35,29 +35,39 @@ export default function Hero() {
       {/* Main content */}
       <div className="relative z-10 max-w-4xl mx-auto w-full">
         <div className="text-center space-y-8">
-          {/* Profile Picture with Upload */}
-          <div className="flex justify-center">
-            <div className="relative group">
+          {/* Book-Style Profile Picture with Upload */}
+          <div className="flex justify-center pt-8">
+            <div className="relative group perspective">
               {profileImage ? (
                 <>
-                  <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-accent shadow-lg shadow-accent/50">
+                  {/* Book-style frame with image */}
+                  <div className="relative w-48 h-64 rounded-lg overflow-hidden shadow-2xl shadow-accent/30 border-8 border-amber-900/50 bg-amber-900">
+                    {/* Book spine effect */}
+                    <div className="absolute -left-2 top-0 bottom-0 w-2 bg-gradient-to-r from-black/30 to-transparent"></div>
+                    
                     <Image
                       src={profileImage}
                       alt="Profile"
-                      width={128}
-                      height={128}
+                      fill
                       className="w-full h-full object-cover"
                     />
+                    
+                    {/* Glossy overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-black/20 pointer-events-none"></div>
                   </div>
+                  
+                  {/* Remove button */}
                   <button
                     onClick={removeImage}
-                    className="absolute -top-2 -right-2 p-2 bg-destructive text-destructive-foreground rounded-full hover:opacity-90 transition-opacity shadow-lg z-10"
+                    className="absolute -top-3 -right-3 p-2.5 bg-destructive text-destructive-foreground rounded-full hover:opacity-90 transition-opacity shadow-lg z-10 border-2 border-background"
                     title="Remove photo"
                   >
-                    <X className="w-4 h-4" />
+                    <X className="w-5 h-5" />
                   </button>
-                  <label className="absolute bottom-0 right-0 p-2 bg-accent text-accent-foreground rounded-full hover:bg-purple-500 transition-all cursor-pointer shadow-lg">
-                    <Plus className="w-4 h-4" />
+                  
+                  {/* Change photo button */}
+                  <label className="absolute -bottom-3 -right-3 p-2.5 bg-accent text-accent-foreground rounded-full hover:bg-purple-500 transition-all cursor-pointer shadow-lg border-2 border-background">
+                    <Plus className="w-5 h-5" />
                     <input
                       type="file"
                       accept="image/*"
@@ -67,11 +77,29 @@ export default function Hero() {
                   </label>
                 </>
               ) : (
-                <label className="w-32 h-32 rounded-full bg-gradient-to-br from-accent to-purple-500 flex items-center justify-center text-white font-bold shadow-lg shadow-accent/50 cursor-pointer hover:shadow-accent/70 transition-all group/upload">
-                  <div className="flex flex-col items-center gap-1">
-                    <Plus className="w-8 h-8 group-hover/upload:scale-110 transition-transform" />
-                    <span className="text-xs font-semibold opacity-80">NK</span>
+                <label className="relative w-48 h-64 rounded-lg overflow-hidden cursor-pointer transition-all group/upload border-8 border-amber-900/50 bg-gradient-to-br from-amber-950 via-slate-900 to-purple-950 shadow-2xl shadow-accent/40 hover:shadow-accent/60">
+                  {/* Book texture background */}
+                  <div className="absolute inset-0 bg-[url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%22100%22><filter id=%22noise%22><feTurbulence type=%22fractalNoise%22 baseFrequency=%220.8%22 numOctaves=%224%22 /></filter><rect width=%22100%22 height=%22100%22 fill=%22%23ffffff%22 opacity=%220.03%22 filter=%22url(%23noise)%22/></svg>')] opacity-50"></div>
+                  
+                  {/* Book spine effect */}
+                  <div className="absolute -left-2 top-0 bottom-0 w-2 bg-gradient-to-r from-black/50 to-transparent"></div>
+                  
+                  {/* Content */}
+                  <div className="relative z-10 w-full h-full flex flex-col items-center justify-center gap-4">
+                    <div className="text-center space-y-3">
+                      <div className="text-6xl">
+                        <Plus className="w-16 h-16 text-accent mx-auto group-hover/upload:scale-110 transition-transform duration-300" />
+                      </div>
+                      <div className="space-y-1">
+                        <p className="text-sm font-bold text-foreground">ADD YOUR PHOTO</p>
+                        <p className="text-xs text-muted-foreground">Click to upload</p>
+                      </div>
+                    </div>
                   </div>
+                  
+                  {/* Glossy overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-black/30 pointer-events-none"></div>
+                  
                   <input
                     type="file"
                     accept="image/*"
