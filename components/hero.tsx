@@ -1,7 +1,28 @@
-import { ArrowRight, Sparkles } from 'lucide-react'
+'use client'
+
+import { ArrowRight, Sparkles, Plus, X } from 'lucide-react'
 import Link from 'next/link'
+import Image from 'next/image'
+import { useState } from 'react'
 
 export default function Hero() {
+  const [profileImage, setProfileImage] = useState<string | null>(null)
+
+  const handleImageUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0]
+    if (file) {
+      const reader = new FileReader()
+      reader.onloadend = () => {
+        setProfileImage(reader.result as string)
+      }
+      reader.readAsDataURL(file)
+    }
+  }
+
+  const removeImage = () => {
+    setProfileImage(null)
+  }
+
   return (
     <section className="relative snap-section flex items-center justify-center overflow-hidden px-4 sm:px-6 lg:px-8">
       {/* Animated gradient orbs background */}
@@ -14,10 +35,51 @@ export default function Hero() {
       {/* Main content */}
       <div className="relative z-10 max-w-4xl mx-auto w-full">
         <div className="text-center space-y-8">
-          {/* Profile Picture Placeholder */}
+          {/* Profile Picture with Upload */}
           <div className="flex justify-center">
-            <div className="w-32 h-32 rounded-full bg-gradient-to-br from-accent to-purple-500 flex items-center justify-center text-white text-4xl font-bold shadow-lg shadow-accent/50">
-              NK
+            <div className="relative group">
+              {profileImage ? (
+                <>
+                  <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-accent shadow-lg shadow-accent/50">
+                    <Image
+                      src={profileImage}
+                      alt="Profile"
+                      width={128}
+                      height={128}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <button
+                    onClick={removeImage}
+                    className="absolute -top-2 -right-2 p-2 bg-destructive text-destructive-foreground rounded-full hover:opacity-90 transition-opacity shadow-lg z-10"
+                    title="Remove photo"
+                  >
+                    <X className="w-4 h-4" />
+                  </button>
+                  <label className="absolute bottom-0 right-0 p-2 bg-accent text-accent-foreground rounded-full hover:bg-purple-500 transition-all cursor-pointer shadow-lg">
+                    <Plus className="w-4 h-4" />
+                    <input
+                      type="file"
+                      accept="image/*"
+                      onChange={handleImageUpload}
+                      className="hidden"
+                    />
+                  </label>
+                </>
+              ) : (
+                <label className="w-32 h-32 rounded-full bg-gradient-to-br from-accent to-purple-500 flex items-center justify-center text-white font-bold shadow-lg shadow-accent/50 cursor-pointer hover:shadow-accent/70 transition-all group/upload">
+                  <div className="flex flex-col items-center gap-1">
+                    <Plus className="w-8 h-8 group-hover/upload:scale-110 transition-transform" />
+                    <span className="text-xs font-semibold opacity-80">NK</span>
+                  </div>
+                  <input
+                    type="file"
+                    accept="image/*"
+                    onChange={handleImageUpload}
+                    className="hidden"
+                  />
+                </label>
+              )}
             </div>
           </div>
 
