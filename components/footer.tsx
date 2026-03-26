@@ -9,7 +9,7 @@ export default function Footer() {
         <div className="border-t border-primary-foreground/20 pt-8">
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
             <p className="text-sm opacity-80">
-              © {currentYear} Alex Chen. All rights reserved.
+              © {currentYear} NANDHAKUMAR N. All rights reserved.
             </p>
             <div className="flex gap-6 text-sm">
               <a href="#about" className="opacity-80 hover:opacity-100 transition-opacity">

@@ -60,7 +60,7 @@ export default function Contact() {
 
               <div className="space-y-3">
                 <a
-                  href="#"
+                  href="https://github.com"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center justify-between p-4 glass-effect rounded-lg group hover:bg-white/20 transition-all"
@@ -73,7 +73,7 @@ export default function Contact() {
                 </a>
 
                 <a
-                  href="#"
+                  href="https://www.linkedin.com/in/nandha-kumar-41b7ba380"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center justify-between p-4 glass-effect rounded-lg group hover:bg-white/20 transition-all"
